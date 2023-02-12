@@ -3,6 +3,13 @@ vim.o.encoding='utf8'
 vim.wo.number=true
 vim.wo.relativenumber=true
 
+if not InVsCode() then
+    vim.o.syntax='enable'
+    vim.o.background='dark'
+    vim.cmd('colorscheme solarized')
+end
+
+
 vim.o.tabstop=4
 vim.bo.tabstop=4
 vim.o.softtabstop=4

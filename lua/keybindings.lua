@@ -1,3 +1,7 @@
+if InVsCode() then
+    print("is in vscode, do nothing keybindings")
+    return
+end
 local map = vim.api.nvim_set_keymap
 local keymap_set = vim.keymap.set
 local opt = {noremap = true, silent = true}

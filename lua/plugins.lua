@@ -16,17 +16,35 @@ return require('packer').startup(function(use)
     use { 'akinsho/bufferline.nvim'}
     -- treesitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use { 'nvim-treesitter/nvim-treesitter-textobjects'}
+    -- complete
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/nvim-cmp'
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+        config = function()
+            require("lspsaga").setup({})
+        end,
+        requires = { {"nvim-tree/nvim-web-devicons"} }
+    })
 
     -- telescopy (find files, file string)
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { {'nvim-lua/plenary.nvim'} },
     }
     -- project manager, Integration in Telescope
     use {
         'nvim-telescope/telescope-project.nvim',
     }
 
+    use({ "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require("nvim-surround").setup()
+        end
+    })
     -- Simple plugins can be specified as strings
     -- use 'rstacruz/vim-closer'
 

@@ -1,4 +1,8 @@
-local opts = { noremap=true, silent=true }
+if InVsCode() then
+    print("is in vscode, do nothing lsp")
+    return
+end
+local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
@@ -12,7 +16,7 @@ local on_attach = function(client, bufnr)
 
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local bufopts = { noremap=true, silent=true, buffer=bufnr }
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -30,7 +34,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
-require('lspconfig').luaserver.setup{
+require('lspconfig').luaserver.setup {
     on_attach = on_attach,
     flags = lsp_flags,
 }
