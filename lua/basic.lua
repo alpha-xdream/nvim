@@ -2,6 +2,8 @@ vim.g.mapleader=';'
 vim.o.encoding='utf8'
 vim.wo.number=true
 vim.wo.relativenumber=true
+vim.o.startcase=true
+vim.o.clipboard='unnamedplus'
 
 if not InVsCode() then
     vim.o.syntax='enable'
