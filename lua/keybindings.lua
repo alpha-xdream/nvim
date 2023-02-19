@@ -23,6 +23,9 @@ if not InVsCode() then
     -- bufferline
     map('n', "<C-h>", ":BufferLineCyclePrev<CR>", opt)
     map('n', "<C-l>", ":BufferLineCycleNext<CR>", opt)
+else
+    map('n', '<leader>b', ':call VSCodeNotify(\"workbench.action.toggleSidebarVisibility\")<CR>', opt)
+    map('n', '<A-m>', ':call VSCodeNotify(\"workbench.view.explorer\")<CR>', opt)
 end
 
 -- normal mode
@@ -30,4 +33,6 @@ map('n', '<CR>', 'o<ESC>', opt)
 map('n', '<S-CR>', 'O<ESC>', opt)
 map('n', 'H', '^', opt)
 map('n', 'L', '$', opt)
+map('n', 'J', '10j', opt)
+map('n', 'K', '10k', opt)
 map('n', '<leader>at', 'ggVG', opt) -- 选中所有文本

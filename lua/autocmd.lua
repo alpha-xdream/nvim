@@ -45,13 +45,12 @@ function S.group(grp, cmds)
     cmd('augroup END')
 end
 
+local configPath = vim.api.nvim_exec('echo stdpath("config")', true)
 -- 1033是英文输入法
 -- 2052是搜狗输入法。设置中默认为英文输入
 local changeInputLanguage = function()
-    local configPath = vim.api.nvim_exec('echo stdpath("config")', true)
     local program = configPath .. '\\tools\\im-select'
-    local str = string.format('!%s 1033 & %s 2052', program, program)
-    print(str, os.time())
+    local str = string.format(':silent :!%s 1033 & %s 2052', program, program)
     cmd(str)
 end
 au.VimEnter = changeInputLanguage

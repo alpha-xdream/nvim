@@ -1,0 +1,7 @@
+{
+    "emmylua.source.roots": [
+        "./lua/**",
+        "./init.lua"
+    ],
+    "svn.ignoreMissingSvnWarning": true
+}
