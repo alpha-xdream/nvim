@@ -2,10 +2,12 @@ vim.g.mapleader=';'
 vim.o.encoding='utf8'
 vim.wo.number=true
 vim.wo.relativenumber=true
-vim.o.startcase=true
+vim.g.startcase=true
+vim.o.timeoutlen = 200
 vim.o.clipboard='unnamedplus'
 
 if not InVsCode() then
+    vim.o.cursorline=true
     vim.o.syntax='enable'
     vim.o.background='dark'
     vim.cmd('colorscheme solarized')
