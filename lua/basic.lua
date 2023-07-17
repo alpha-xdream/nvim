@@ -1,10 +1,10 @@
-vim.g.mapleader=';'
+vim.g.mapleader=" "
 vim.o.encoding='utf8'
 vim.wo.number=true
 vim.wo.relativenumber=true
 vim.g.startcase=true
-vim.o.timeoutlen = 200
-vim.o.clipboard='unnamedplus'
+vim.o.timeoutlen = 300
+--vim.o.clipboard='unnamedplus'
 
 if not InVsCode() then
     vim.o.cursorline=true
@@ -32,3 +32,8 @@ vim.o.cmdheight=2
 vim.o.autoread = true
 vim.bo.autoread = true
 vim.o.wildmode='full'
+vim.o.wrap = false
+vim.o.backup = false
+vim.o.title = true
+vim.o.cursorline = true
+vim.o.updatetime = 50
