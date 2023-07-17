@@ -2,7 +2,7 @@
 my nvim config
 
 # packer
-https://github.com/wbthomason/packer.nvim
+https://github.com/folke/lazy.nvim.git
 
 
 
