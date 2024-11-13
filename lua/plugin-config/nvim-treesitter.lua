@@ -1,5 +1,5 @@
 require 'nvim-treesitter.configs'.setup{
-    ensure_install = {'html', 'css', 'vim', 'lua', 'javascript', 'typescript', 'tsx', 'csharp'},
+    -- ensure_install = {'html', 'css', 'vim', 'lua', 'javascript', 'typescript', 'tsx', 'c_sharp'},
     hightlight = {
         enable = true,
         additional_vim_regex_highlighting = false

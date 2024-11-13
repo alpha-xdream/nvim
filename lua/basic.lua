@@ -35,5 +35,4 @@ vim.o.wildmode='full'
 vim.o.wrap = false
 vim.o.backup = false
 vim.o.title = true
-vim.o.cursorline = true
 vim.o.updatetime = 50
